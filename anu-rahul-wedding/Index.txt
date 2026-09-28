@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sherly & Cyriac Wedding</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASIC PAGE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff8f0;
+  color: #5c4033;
+  overflow-x: hidden;
+}
+
+.invitation {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  min-height: 100vh;
+  margin: auto;
+
+  padding: 90px 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   TEXT CONTENT
+========================= */
+
+.content {
+  position: relative;
+  z-index: 5;
+
+  text-align: center;
+
+  max-width: 850px;
+}
+
+.intro {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+
+  opacity: 0;
+
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.names {
+  font-family: "Great Vibes", cursive;
+
+  font-size: clamp(65px, 10vw, 120px);
+
+  font-weight: 400;
+
+  margin: 5px 0 15px;
+
+  line-height: 1;
+
+  opacity: 0;
+
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.message {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 24px;
+
+  max-width: 650px;
+
+  line-height: 1.5;
+
+  margin: 0 auto 25px;
+
+  opacity: 0;
+
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 1.2s;
+}
+
+
+/* =========================
+   COUPLE PHOTO
+========================= */
+
+.couple-photo {
+  width: min(80%, 420px);
+
+  max-height: 500px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  margin: 15px 0 25px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+
+  opacity: 0;
+
+  animation: photoAppear 2s ease forwards;
+
+  animation-delay: 1.5s;
+}
+
+@keyframes photoAppear {
+
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================
+   DATE & VENUE
+========================= */
+
+.date {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+
+  font-weight: 600;
+
+  margin-top: 5px;
+
+  opacity: 0;
+
+  animation: fadeUp 1.5s ease forwards;
+
+  animation-delay: 2s;
+}
+
+.venue {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+
+  margin-top: 5px;
+
+  opacity: 0;
+
+  animation: fadeUp 1.5s ease forwards;
+
+  animation-delay: 2.2s;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  opacity: 0;
+
+  animation: fadeUp 1.5s ease forwards;
+
+  animation-delay: 2.6s;
+}
+
+.time-box {
+  min-width: 75px;
+
+  padding: 12px 8px;
+
+  border: 1px solid #c9a88a;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.65);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.time-box span {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+
+  font-weight: 600;
+}
+
+.time-box small {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  margin-top: 3px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  opacity: 0;
+
+  animation: fadeUp 1.5s ease forwards;
+
+  animation-delay: 3s;
+}
+
+.button {
+  text-decoration: none;
+
+  color: #5c4033;
+
+  border: 1px solid #c9a88a;
+
+  padding: 10px 18px;
+
+  border-radius: 25px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  background: rgba(255,255,255,0.75);
+
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+
+  background: #fff;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+/* =========================
+   FLOWER SHOWER
+========================= */
+
+#flowerContainer {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 10;
+}
+
+.flower {
+  position: absolute;
+
+  top: -80px;
+
+  object-fit: contain;
+
+  animation-name: flowerFall;
+
+  animation-timing-function: linear;
+
+  animation-fill-mode: forwards;
+}
+
+@keyframes flowerFall {
+
+  0% {
+    transform: translateY(-80px) rotate(0deg);
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+
+    opacity: 0;
+  }
+}
+
+
+/* =========================
+   TOP RIGHT FLOWER BORDER
+   BEHIND TEXT
+========================= */
+
+.right-flower-border {
+
+  position: absolute;
+
+  top: 0;
+
+  right: 0;
+
+  width: 420px;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  animation: borderFadeRight 7s ease-in-out forwards;
+
+  animation-delay: 1s;
+}
+
+@keyframes borderFadeRight {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      translateX(80px)
+      translateY(-20px)
+      scale(0.9);
+  }
+
+  25% {
+
+    opacity: 0.75;
+
+    transform:
+      translateX(0)
+      translateY(0)
+      scale(1);
+  }
+
+  55% {
+
+    opacity: 0.55;
+  }
+
+  100% {
+
+    opacity: 0;
+
+    transform:
+      translateX(0)
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================
+   BOTTOM LEFT FLOWER BORDER
+   BEHIND TEXT
+========================= */
+
+.left-bottom-flower-border {
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  width: 420px;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  animation: borderFadeLeft 7s ease-in-out forwards;
+
+  animation-delay: 1.5s;
+}
+
+@keyframes borderFadeLeft {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      translateX(-80px)
+      translateY(20px)
+      rotate(180deg)
+      scale(0.9);
+  }
+
+  25% {
+
+    opacity: 0.75;
+
+    transform:
+      translateX(0)
+      translateY(0)
+      rotate(180deg)
+      scale(1);
+  }
+
+  55% {
+
+    opacity: 0.55;
+  }
+
+  100% {
+
+    opacity: 0;
+
+    transform:
+      translateX(0)
+      translateY(0)
+      rotate(180deg)
+      scale(1);
+  }
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+
+  position: fixed;
+
+  right: 20px;
+
+  bottom: 20px;
+
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(255,255,255,0.95);
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+  cursor: pointer;
+
+  font-size: 22px;
+
+  z-index: 20;
+
+  transition: 0.3s;
+}
+
+.music-button:hover {
+
+  transform: scale(1.1);
+}
+
+
+/* =========================
+   GENERAL ANIMATION
+========================= */
+
+@keyframes fadeUp {
+
+  0% {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .invitation {
+
+    padding: 80px 18px;
+  }
+
+  .intro {
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .names {
+
+    font-size: 65px;
+  }
+
+  .message {
+
+    font-size: 20px;
+
+    max-width: 90%;
+  }
+
+  .couple-photo {
+
+    width: 85%;
+
+    max-height: 420px;
+  }
+
+  .date {
+
+    font-size: 25px;
+  }
+
+  .venue {
+
+    font-size: 12px;
+  }
+
+
+  /* Smaller borders on mobile */
+
+  .right-flower-border {
+
+    width: 250px;
+
+    top: 0;
+
+    right: 0;
+  }
+
+  .left-bottom-flower-border {
+
+    width: 250px;
+
+    bottom: 0;
+
+    left: 0;
+  }
+
+
+  /* Smaller countdown */
+
+  .countdown {
+
+    gap: 6px;
+  }
+
+  .time-box {
+
+    min-width: 65px;
+
+    padding: 10px 5px;
+  }
+
+  .time-box span {
+
+    font-size: 25px;
+  }
+
+  .time-box small {
+
+    font-size: 8px;
+  }
+
+
+  /* Smaller music button */
+
+  .music-button {
+
+    width: 48px;
+
+    height: 48px;
+
+    right: 15px;
+
+    bottom: 15px;
+
+    font-size: 19px;
+  }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .names {
+
+    font-size: 55px;
+  }
+
+  .message {
+
+    font-size: 18px;
+  }
+
+  .time-box {
+
+    min-width: 58px;
+  }
+
+  .time-box span {
+
+    font-size: 22px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     FLOWER SHOWER
+========================= -->
+
+<div id="flowerContainer"></div>
+
+
+<!-- =========================
+     INVITATION
+========================= -->
+
+<div class="invitation">
+
+
+  <!-- TOP RIGHT BORDER -->
+
+  <img
+    src="flower-border.svg"
+    class="right-flower-border"
+    alt=""
+  >
+
+
+  <!-- BOTTOM LEFT BORDER -->
+
+  <img
+    src="flower-border.svg"
+    class="left-bottom-flower-border"
+    alt=""
+  >
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================= -->
+
+  <div class="content">
+
+
+    <div class="intro">
+      Together with their families
+    </div>
+
+
+    <div class="names">
+      Sherly & Cyriac
+    </div>
+
+
+    <div class="message">
+      With joyful hearts, we invite you
+      to celebrate our wedding day with us.
+    </div>
+
+
+    <!-- COUPLE PHOTO -->
+
+    <img
+      src="couple.jpg"
+      class="couple-photo"
+      alt="Sherly and Cyriac"
+    >
+
+
+    <!-- DATE -->
+
+    <div class="date">
+      14 November 2026
+    </div>
+
+
+    <!-- VENUE -->
+
+    <div class="venue">
+      6:00 PM · Trivandrum
+    </div>
+
+
+    <!-- =========================
+         COUNTDOWN
+    ========================= -->
+
+    <div class="countdown">
+
+      <div class="time-box">
+
+        <span id="days">00</span>
+
+        <small>Days</small>
+
+      </div>
+
+
+      <div class="time-box">
+
+        <span id="hours">00</span>
+
+        <small>Hours</small>
+
+      </div>
+
+
+      <div class="time-box">
+
+        <span id="minutes">00</span>
+
+        <small>Minutes</small>
+
+      </div>
+
+
+      <div class="time-box">
+
+        <span id="seconds">00</span>
+
+        <small>Seconds</small>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         CLICKABLE BUTTONS
+    ========================= -->
+
+    <div class="buttons">
+
+
+      <!-- GOOGLE MAPS -->
+
+      <a
+        href="https://maps.app.goo.gl/hmMKXiunLX5PpfgZ6"
+        target="_blank"
+        class="button"
+      >
+        📍 Location
+      </a>
+
+
+      <!-- CALL -->
+
+      <a
+        href="tel:+919656999534"
+        class="button"
+      >
+        ☎ Call
+      </a>
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        href="https://wa.me/919656999534"
+        target="_blank"
+        class="button"
+      >
+        💬 WhatsApp
+      </a>
+
+
+      <!-- RSVP -->
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio id="weddingMusic" loop>
+
+  <source
+    src="wedding-music.mp3"
+    type="audio/mpeg"
+  >
+
+</audio>
+
+
+<button
+  class="music-button"
+  id="musicButton"
+  aria-label="Play wedding music"
+>
+  🎵
+</button>
+
+
+<script>
+
+
+/* =========================
+   FLOWER SHOWER
+========================= */
+
+const flowerContainer =
+  document.getElementById("flowerContainer");
+
+const flowerImage = "flower.svg";
+
+const flowerCount = 35;
+
+
+for (let i = 0; i < flowerCount; i++) {
+
+  const flower =
+    document.createElement("img");
+
+  flower.src = flowerImage;
+
+  flower.classList.add("flower");
+
+
+  /* Random horizontal position */
+
+  flower.style.left =
+    Math.random() * 100 + "%";
+
+
+  /* Random size */
+
+  const size =
+    Math.random() * 30 + 25;
+
+  flower.style.width =
+    size + "px";
+
+  flower.style.height =
+    size + "px";
+
+
+  /* Random falling speed */
+
+  const duration =
+    Math.random() * 4 + 4;
+
+  flower.style.animationDuration =
+    duration + "s";
+
+
+  /* Random delay */
+
+  const delay =
+    Math.random() * 5;
+
+  flower.style.animationDelay =
+    delay + "s";
+
+
+  flowerContainer.appendChild(flower);
+
+}
+
+
+/* =========================
+   COUNTDOWN TIMER
+========================= */
+
+
+/*
+   CHANGE THIS DATE
+   FOR THE CLIENT'S WEDDING
+*/
+
+const weddingDate =
+  new Date(
+    "November 14, 2026 18:00:00"
+  ).getTime();
+
+
+const countdown =
+  setInterval(function () {
+
+
+    const now =
+      new Date().getTime();
+
+
+    const difference =
+      weddingDate - now;
+
+
+    /* Wedding date reached */
+
+    if (difference <= 0) {
+
+      clearInterval(countdown);
+
+
+      document.getElementById("days")
+        .innerHTML = "00";
+
+      document.getElementById("hours")
+        .innerHTML = "00";
+
+      document.getElementById("minutes")
+        .innerHTML = "00";
+
+      document.getElementById("seconds")
+        .innerHTML = "00";
+
+      return;
+    }
+
+
+    /* Calculate days */
+
+    const days =
+      Math.floor(
+        difference /
+        (1000 * 60 * 60 * 24)
+      );
+
+
+    /* Calculate hours */
+
+    const hours =
+      Math.floor(
+        (difference %
+        (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+      );
+
+
+    /* Calculate minutes */
+
+    const minutes =
+      Math.floor(
+        (difference %
+        (1000 * 60 * 60)) /
+        (1000 * 60)
+      );
+
+
+    /* Calculate seconds */
+
+    const seconds =
+      Math.floor(
+        (difference %
+        (1000 * 60)) /
+        1000
+      );
+
+
+    /* Display */
+
+    document.getElementById("days")
+      .innerHTML =
+      String(days).padStart(2, "0");
+
+
+    document.getElementById("hours")
+      .innerHTML =
+      String(hours).padStart(2, "0");
+
+
+    document.getElementById("minutes")
+      .innerHTML =
+      String(minutes).padStart(2, "0");
+
+
+    document.getElementById("seconds")
+      .innerHTML =
+      String(seconds).padStart(2, "0");
+
+
+  }, 1000);
+
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+const music =
+  document.getElementById(
+    "weddingMusic"
+  );
+
+
+const musicButton =
+  document.getElementById(
+    "musicButton"
+  );
+
+
+let musicPlaying = false;
+
+
+musicButton.addEventListener(
+  "click",
+  function () {
+
+
+    if (!musicPlaying) {
+
+
+      music.play();
+
+
+      musicButton.innerHTML =
+        "🔊";
+
+
+      musicPlaying = true;
+
+
+    } else {
+
+
+      music.pause();
+
+
+      musicButton.innerHTML =
+        "🎵";
+
+
+      musicPlaying = false;
+
+    }
+
+  }
+);
+
+</script>
+
+
+</body>
+</html>
